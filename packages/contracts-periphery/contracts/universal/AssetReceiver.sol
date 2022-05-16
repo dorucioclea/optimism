@@ -1,16 +1,15 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.9;
 
-import { Owned } from "@rari-capital/solmate/src/auth/Owned.sol";
 import { ERC20 } from "@rari-capital/solmate/src/tokens/ERC20.sol";
 import { ERC721 } from "@rari-capital/solmate/src/tokens/ERC721.sol";
+import { Transactor } from "./Transactor.sol";
 
 /**
- * @title RetroReceiver
- * @notice RetroReceiver is a minimal contract for receiving funds, meant to be deployed at the
- * same address on every chain that supports EIP-2470.
+ * @title AssetReceiver
+ * @notice AssetReceiver is a minimal contract for receiving funds.
  */
-contract RetroReceiver is Owned {
+contract AssetReceiver is Transactor {
     /**
      * Emitted when ETH is received by this address.
      */
@@ -42,9 +41,9 @@ contract RetroReceiver is Owned {
     );
 
     /**
-     * @param _owner Address to initially own the contract.
+     * @param _owner Initial contract owner.
      */
-    constructor(address _owner) Owned(_owner) {}
+    constructor(address _owner) Transactor(_owner) {}
 
     /**
      * Make sure we can receive ETH.
