@@ -31,9 +31,14 @@ contract L1Block {
     uint64 public timestamp;
 
     /**
-     * @notice The average L1 basefee
+     * @notice The latest L1 basefee
      */
     uint256 public basefee;
+
+    /**
+     * @notice The average L1 basefee
+     */
+    uint256 public averageBasefee;
 
     /**
      * @notice The latest L1 blockhash
@@ -44,6 +49,18 @@ contract L1Block {
      * @notice The number of L2 blocks in the same epoch
      */
     uint64 public sequenceNumber;
+
+    /**
+     * @notice The weight assigned to the previous average when computing the
+     * average basefee
+     */
+    uint256 constant avgWeight = 7;
+
+    /**
+     * @notice The weight assigned to the next basefee when computing
+     * the average basefee
+     */
+    uint256 constant basefeeWeight = 3;
 
     /**
      * @notice Sets the L1 values
@@ -66,7 +83,8 @@ contract L1Block {
 
         number = _number;
         timestamp = _timestamp;
-        basefee = _averageBasefee(_basefee);
+        basefee = _basefee;
+        averageBasefee = _averageBasefee(_basefee);
         hash = _hash;
         sequenceNumber = _sequenceNumber;
     }
@@ -76,7 +94,7 @@ contract L1Block {
      */
 
     function _averageBasefee(uint256 _basefee) internal returns (uint256) {
-        return basefee * (uint256(7) / uint256(10)) +
-            _basefee * (uint256(3) / uint256(10));
+        return averageBasefee * (avgWeight / uint256(10)) +
+            _basefee * (basefeeWeight / uint256(10));
     }
 }
