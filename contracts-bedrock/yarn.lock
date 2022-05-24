@@ -1001,6 +1001,26 @@
     "@ethersproject/properties" "^5.6.0"
     "@ethersproject/strings" "^5.6.0"
 
+"@foundry-rs/easy-foundryup@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@foundry-rs/easy-foundryup/-/easy-foundryup-0.1.2.tgz#6ee417a693679c4f0fa98a82c387ccf26fbaa191"
+  integrity sha512-0pVssHKJFr8BUTslJwHtSUSfdgEvBFkIB0ApGYM/GpaLMUok2eLcna8FmNp7CX0YnI3P5ywe+v9mVE1Mtju5KQ==
+  dependencies:
+    command-exists "^1.2.9"
+    ts-interface-checker "^0.1.9"
+
+"@foundry-rs/hardhat@^0.1.4":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@foundry-rs/hardhat/-/hardhat-0.1.4.tgz#c7b90bdde6c217472788f5cbce720714b641523b"
+  integrity sha512-2R9m1OUPJsL0VIbmozrFanqWwRFHeppTAGZ1btkHq6/dd3Fx65xsUDDnRKWdeo/L75JWsSGP6ESVcM4j0zWP7Q==
+  dependencies:
+    "@foundry-rs/easy-foundryup" "^0.1.2"
+    "@types/sinon-chai" "^3.2.3"
+    "@types/web3" "1.0.19"
+    debug "^4.1.1"
+    ethers "^5.0.0"
+    ts-interface-checker "^0.1.9"
+
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.5.0.tgz#1407967d4c6eecd7388f83acf1eaf4d0c6e58ef9"
@@ -3275,7 +3295,7 @@ combined-stream@^1.0.6, combined-stream@^1.0.8, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-command-exists@^1.2.8:
+command-exists@^1.2.8, command-exists@^1.2.9:
   version "1.2.9"
   resolved "https://registry.yarnpkg.com/command-exists/-/command-exists-1.2.9.tgz#c50725af3808c8ab0260fd60b01fbfa25b954f69"
   integrity sha512-LTQ/SGc+s0Xc0Fu5WaKnR0YiygZkm9eKFvyS+fRsU7/ZWFF8ykFM6Pc9aCVf1+xasOOZpO3BAVgVrKvsqKHV7w==
@@ -10027,6 +10047,11 @@ ts-generator@^0.1.1:
     prettier "^2.1.2"
     resolve "^1.8.1"
     ts-essentials "^1.0.0"
+
+ts-interface-checker@^0.1.9:
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/ts-interface-checker/-/ts-interface-checker-0.1.13.tgz#784fd3d679722bc103b1b4b8030bcddb5db2a699"
+  integrity sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==
 
 ts-node@^10.1.0:
   version "10.4.0"
